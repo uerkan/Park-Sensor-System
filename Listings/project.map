@@ -1,0 +1,335 @@
+Component: ARM Compiler 6.14.1 Tool: armlink [5db06d00]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(a_text) refers to delay100m.o(main) for delay50m
+    main.o(a_text) refers to lcdout.o(main) for lcdout
+    main.o(a_text) refers to cnvrt.o(main) for CONVRT
+    main.o(a_text) refers to main.o(sdata) for MSG
+    cnvrt.o(main) refers to lcdout.o(main) for string
+    startup.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to main.o(a_text) for __main
+    startup.o(RESET) refers to pulse.o(routines) for My_Timer0A_Handler
+    startup.o(RESET) refers to thresholdmode.o(main) for ThresholdMode
+    startup.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(.text) refers to startup.o(HEAP) for HeapMem
+    startup.o(.text) refers to startup.o(STACK) for StackMem
+    thresholdmode.o(main) refers to delay100m.o(main) for delay50m
+    thresholdmode.o(main) refers to lcdout.o(main) for lcdout
+    thresholdmode.o(main) refers to cnvrt.o(main) for CONVRT
+    thresholdmode.o(main) refers to thresholdmode.o(sdata) for TH
+    lcdout.o(main) refers to lcdout.o(sdata) for ASCII
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing inchar.o(.text), (188 bytes).
+    Removing outstr.o(.text), (236 bytes).
+    Removing startup.o(HEAP), (0 bytes).
+    Removing startup.o(.text), (48 bytes).
+    Removing isr.o(.text), (0 bytes).
+
+5 unused section(s) (total 472 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    InChar.s                                 0x00000000   Number         0  inchar.o ABSOLUTE
+    OutStr.s                                 0x00000000   Number         0  outstr.o ABSOLUTE
+    Pulse.s                                  0x00000000   Number         0  pulse.o ABSOLUTE
+    Startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    cnvrt.s                                  0x00000000   Number         0  cnvrt.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    delay100m.s                              0x00000000   Number         0  delay100m.o ABSOLUTE
+    lcdout.s                                 0x00000000   Number         0  lcdout.o ABSOLUTE
+    main.s                                   0x00000000   Number         0  main.o ABSOLUTE
+    thresholdmode.s                          0x00000000   Number         0  thresholdmode.o ABSOLUTE
+    RESET                                    0x00000000   Section      652  startup.o(RESET)
+    $v0                                      0x0000026c   Number         0  startup.o(RESET)
+    .text                                    0x0000028c   Section        0  heapauxi.o(.text)
+    $v0                                      0x00000294   Number         0  main.o(a_text)
+    pwm_init                                 0x00000295   Thumb Code   662  main.o(a_text)
+    a_text                                   0x00000294   Section     1900  main.o(a_text)
+    $v0                                      0x00000a00   Number         0  cnvrt.o(main)
+    main                                     0x00000a00   Section       72  cnvrt.o(main)
+    $v0                                      0x00000a48   Number         0  delay100m.o(main)
+    main                                     0x00000a48   Section       32  delay100m.o(main)
+    $v0                                      0x00000a68   Number         0  thresholdmode.o(main)
+    main                                     0x00000a68   Section      524  thresholdmode.o(main)
+    $v0                                      0x00000c74   Number         0  lcdout.o(main)
+    main                                     0x00000c74   Section      152  lcdout.o(main)
+    $v0                                      0x00000d0c   Number         0  pulse.o(routines)
+    routines                                 0x00000d0c   Section       80  pulse.o(routines)
+    MSG                                      0x00000d5c   Data           5  main.o(sdata)
+    sdata                                    0x00000d5c   Section       49  main.o(sdata)
+    MSG1                                     0x00000d62   Data           5  main.o(sdata)
+    mm                                       0x00000d68   Data           4  main.o(sdata)
+    NO                                       0x00000d6d   Data          13  main.o(sdata)
+    BO                                       0x00000d7b   Data          13  main.o(sdata)
+    CAR                                      0x00000d89   Data           3  main.o(sdata)
+    mm                                       0x00000d90   Data           4  thresholdmode.o(sdata)
+    sdata                                    0x00000d90   Section       51  thresholdmode.o(sdata)
+    NO                                       0x00000d95   Data          13  thresholdmode.o(sdata)
+    TH                                       0x00000da3   Data          13  thresholdmode.o(sdata)
+    BarThres                                 0x00000db1   Data          13  thresholdmode.o(sdata)
+    STAR                                     0x00000dbf   Data           3  thresholdmode.o(sdata)
+    ASCII                                    0x00000dc4   Data           5  lcdout.o(sdata)
+    sdata                                    0x00000dc4   Section      475  lcdout.o(sdata)
+    StackMem                                 0x20000000   Data           0  startup.o(STACK)
+    STACK                                    0x20000000   Section     1024  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$STANDARDLIB$REQ8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup.o(RESET)
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
+    NMI_Handler                              0x00000271   Thumb Code     2  startup.o(RESET)
+    HardFault_Handler                        0x00000273   Thumb Code     2  startup.o(RESET)
+    MemManage_Handler                        0x00000275   Thumb Code     2  startup.o(RESET)
+    BusFault_Handler                         0x00000277   Thumb Code     2  startup.o(RESET)
+    UsageFault_Handler                       0x00000279   Thumb Code     2  startup.o(RESET)
+    SVC_Handler                              0x0000027b   Thumb Code     2  startup.o(RESET)
+    DebugMon_Handler                         0x0000027d   Thumb Code     2  startup.o(RESET)
+    PendSV_Handler                           0x0000027f   Thumb Code     2  startup.o(RESET)
+    SysTick_Handler                          0x00000281   Thumb Code     2  startup.o(RESET)
+    ADC0Seq0_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq1_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq2_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    ADC0Seq3_Handler                         0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortA_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortB_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortC_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortD_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    GPIOPortE_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    I2C0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Fault_Handler                        0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator0_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator1_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    PWM0Generator2_Handler                   0x00000283   Thumb Code     0  startup.o(RESET)
+    Quadrature0_Handler                      0x00000283   Thumb Code     0  startup.o(RESET)
+    SSI0_Handler                             0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer0B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer1B_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    Timer2A_Handler                          0x00000283   Thumb Code     0  startup.o(RESET)
+    UART0_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    UART1_Handler                            0x00000283   Thumb Code     0  startup.o(RESET)
+    WDT_Handler                              0x00000283   Thumb Code     0  startup.o(RESET)
+    Comp0_Handler                            0x00000287   Thumb Code     0  startup.o(RESET)
+    Comp1_Handler                            0x00000287   Thumb Code     0  startup.o(RESET)
+    Comp2_Handler                            0x00000287   Thumb Code     0  startup.o(RESET)
+    FlashCtl_Handler                         0x00000287   Thumb Code     0  startup.o(RESET)
+    GPIOPortF_Handler                        0x00000287   Thumb Code     0  startup.o(RESET)
+    SysCtl_Handler                           0x00000287   Thumb Code     0  startup.o(RESET)
+    Timer2B_Handler                          0x00000287   Thumb Code     0  startup.o(RESET)
+    ADC1Seq0_Handler                         0x0000028b   Data           0  startup.o(RESET)
+    ADC1Seq1_Handler                         0x0000028b   Data           0  startup.o(RESET)
+    ADC1Seq2_Handler                         0x0000028b   Data           0  startup.o(RESET)
+    ADC1Seq3_Handler                         0x0000028b   Data           0  startup.o(RESET)
+    CAN0_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    CAN1_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    CAN2_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    Ethernet_Handler                         0x0000028b   Data           0  startup.o(RESET)
+    ExtBus_Handler                           0x0000028b   Data           0  startup.o(RESET)
+    FPU_Handler                              0x0000028b   Data           0  startup.o(RESET)
+    Fan0_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortG_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortH_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortJ_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortK_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortL_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortM_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortN_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortP1_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortP2_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortP3_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortP4_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortP5_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortP6_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortP7_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortP_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortQ1_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortQ2_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortQ3_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortQ4_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortQ5_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortQ6_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortQ7_Handler                       0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortQ_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortR_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    GPIOPortS_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    Hibernate_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    I2C1_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    I2C2_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    I2C3_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    I2C4_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    I2C5_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    I2S0_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    LPC0_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    PECI0_Handler                            0x0000028b   Data           0  startup.o(RESET)
+    PWM0Generator3_Handler                   0x0000028b   Data           0  startup.o(RESET)
+    PWM1Fault_Handler                        0x0000028b   Data           0  startup.o(RESET)
+    PWM1Generator0_Handler                   0x0000028b   Data           0  startup.o(RESET)
+    PWM1Generator1_Handler                   0x0000028b   Data           0  startup.o(RESET)
+    PWM1Generator2_Handler                   0x0000028b   Data           0  startup.o(RESET)
+    PWM1Generator3_Handler                   0x0000028b   Data           0  startup.o(RESET)
+    Quadrature1_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    Quadrature2_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    SSI1_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    SSI2_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    SSI3_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    Timer3A_Handler                          0x0000028b   Data           0  startup.o(RESET)
+    Timer3B_Handler                          0x0000028b   Data           0  startup.o(RESET)
+    Timer4A_Handler                          0x0000028b   Data           0  startup.o(RESET)
+    Timer4B_Handler                          0x0000028b   Data           0  startup.o(RESET)
+    Timer5A_Handler                          0x0000028b   Data           0  startup.o(RESET)
+    Timer5B_Handler                          0x0000028b   Data           0  startup.o(RESET)
+    UART2_Handler                            0x0000028b   Data           0  startup.o(RESET)
+    UART3_Handler                            0x0000028b   Data           0  startup.o(RESET)
+    UART4_Handler                            0x0000028b   Data           0  startup.o(RESET)
+    UART5_Handler                            0x0000028b   Data           0  startup.o(RESET)
+    UART6_Handler                            0x0000028b   Data           0  startup.o(RESET)
+    UART7_Handler                            0x0000028b   Data           0  startup.o(RESET)
+    USB0_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    WideTimer0A_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer0B_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer1A_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer1B_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer2A_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer2B_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer3A_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer3B_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer4A_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer4B_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer5A_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    WideTimer5B_Handler                      0x0000028b   Data           0  startup.o(RESET)
+    uDMA_Error                               0x0000028b   Data           0  startup.o(RESET)
+    uDMA_Handler                             0x0000028b   Data           0  startup.o(RESET)
+    __use_two_region_memory                  0x0000028d   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0000028f   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x00000291   Thumb Code     2  heapauxi.o(.text)
+    __main                                   0x00000619   Thumb Code   942  main.o(a_text)
+    CONVRT                                   0x00000a01   Thumb Code    72  cnvrt.o(main)
+    delay50m                                 0x00000a49   Thumb Code    30  delay100m.o(main)
+    ThresholdMode                            0x00000a69   Thumb Code   464  thresholdmode.o(main)
+    lcdout                                   0x00000c75   Thumb Code    36  lcdout.o(main)
+    string                                   0x00000c99   Thumb Code    24  lcdout.o(main)
+    OutChar                                  0x00000cb1   Thumb Code    74  lcdout.o(main)
+    My_Timer0A_Handler                       0x00000d0d   Thumb Code    70  pulse.o(routines)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000026d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000013a0, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000fa0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x0000028c   Code   RO           28  * RESET               startup.o
+    0x0000028c   0x0000028c   0x00000006   Code   RO           49    .text               c_w.l(heapauxi.o)
+    0x00000292   0x00000292   0x00000002   PAD
+    0x00000294   0x00000294   0x0000076c   Code   RO            2    a_text              main.o
+    0x00000a00   0x00000a00   0x00000048   Code   RO            8    main                cnvrt.o
+    0x00000a48   0x00000a48   0x00000020   Code   RO           12    main                delay100m.o
+    0x00000a68   0x00000a68   0x0000020c   Code   RO           38    main                thresholdmode.o
+    0x00000c74   0x00000c74   0x00000098   Code   RO           43    main                lcdout.o
+    0x00000d0c   0x00000d0c   0x00000050   Code   RO           22    routines            pulse.o
+    0x00000d5c   0x00000d5c   0x00000031   Data   RO            1    sdata               main.o
+    0x00000d8d   0x00000d8d   0x00000003   PAD
+    0x00000d90   0x00000d90   0x00000033   Data   RO           37    sdata               thresholdmode.o
+    0x00000dc3   0x00000dc3   0x00000001   PAD
+    0x00000dc4   0x00000dc4   0x000001db   Data   RO           42    sdata               lcdout.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00000fa0, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000fa0   0x00000400   Data   RW           26    STACK               startup.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000400, Load base: 0x000013a0, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        72          0          0          0          0        332   cnvrt.o
+        32          2          0          0          0        324   delay100m.o
+       152         18        475          0          0        424   lcdout.o
+      1900        296         49          0          0        980   main.o
+        80         10          0          0          0        348   pulse.o
+       652        622          0       1024          0        712   startup.o
+       524         60         51          0          0        484   thresholdmode.o
+
+    ----------------------------------------------------------------------
+      3412       1008        580       1024          0       3604   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          5          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         6          0          0          0          0        152   heapauxi.o
+
+    ----------------------------------------------------------------------
+         8          0          0          0          0        152   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+         6          0          0          0          0        152   c_w.l
+
+    ----------------------------------------------------------------------
+         8          0          0          0          0        152   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      3420       1008        580       1024          0       3156   Grand Totals
+      3420       1008        580       1024          0       3156   ELF Image Totals
+      3420       1008        580       1024          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 4000 (   3.91kB)
+    Total RW  Size (RW Data + ZI Data)              1024 (   1.00kB)
+    Total ROM Size (Code + RO Data + RW Data)       5024 (   4.91kB)
+
+==============================================================================
+

@@ -1,0 +1,37 @@
+	AREA	main,READONLY,CODE
+	THUMB
+	ALIGN
+	EXPORT CONVRT
+	EXTERN InChar
+	EXTERN OutChar
+	EXTERN string
+
+CONVRT	PROC
+	PUSH {LR}
+	PUSH {R4}
+	PUSH {R1}
+	PUSH {R2}
+	PUSH {R3}
+	MOV R1,#10   
+	MOV R2,#0x04
+	STR R2,[R5,#1]			 ; R5 unchanged, R5+1 = EOF
+loop UDIV R3,R4,R1 			; R3=137/10=13
+	CMP R4,#0 				; if R4 = 0 exit
+	BEQ	exit 
+	MLS R3,R1,R3,R4 			; R3= R4-(R1*R3) = 137-13*10 = 7
+	ADD R3,R3,#48 				; ASCII code conversion
+	STRB R3,[R5] 				; STORE LEAST SIGNIFICANT BYTE TO [R5]
+	SUB R5,R5,#1 			; R5=R5-1
+	UDIV R4,R4,R1 				; R4= 137/10 = 13
+	B loop
+exit
+	ADD R5,R5,#1 				; SINCE R5-1 IMPLEMENTED AT THE LAST LOOP BUT DIDNT ASSINGED, INCREMENT R5
+	BL string					; START READING FROM R5 TO EOF
+	POP	{R3}
+	POP {R2}
+	POP {R1}
+	POP {R4}
+	POP {LR}
+	BX LR
+	ENDP
+	END
